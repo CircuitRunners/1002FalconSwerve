@@ -1,15 +1,15 @@
 **Note: In 2023, there was an [issue](https://github.com/Team364/BaseFalconSwerve/issues/8) that prevented this code from working with MK4i's (or any module that used inverted motors). A [fix](https://github.com/Team364/BaseFalconSwerve/issues/8#issuecomment-1384799539) has been found, tested on a real robot, and this issue is believed to have been fixed as of 1/17. If anyone experiences any further issues, please report them. Thanks**
 
-# BaseFalconSwerve </br>
+# 1002FalconSwerve </br>
 
-**Basic Swerve Code for a Swerve Module using Falcon Motors, a CTRE CANCoder, and a CTRE Pigeon Gyro** </br>
+**Basic Swerve Code for a Swerve Module using Falcon Motors, a Thrifty Absolute Mag Encoder, and a NavX-MXP2 Gyro** </br>
 This code was designed with Swerve Drive Specialties MK3, MK4, and MK4i style modules in mind, but should be easily adaptable to other styles of modules.</br>
 
 **Setting Constants**
 ----
 The following things must be adjusted to your robot and module's specific constants in the Constants.java file (all distance units must be in meters, and rotation units in radians):</br>
 These instructions are mostly followable from Step 
-1. Gyro Settings: ```pigeonID``` and ```invertGyro``` (ensure that the gyro rotation is CCW+ (Counter Clockwise Positive)
+**I THINK THIS DOESN'T DO ANYTHING AFTER ADAPTING TO THE NAVX BUT I FORGOR SO BE CAREFUL** 1. Gyro Settings: ```pigeonID``` and ```invertGyro``` (ensure that the gyro rotation is CCW+ (Counter Clockwise Positive) 
 2. ```chosenModule```: 
 <br>If you are using a COTS SDS Module (more modules will be added in the future), set the module and drive ratio you are using here. 
 <br>This will automatically set certain constants for the specific module required to function properly. 
@@ -18,7 +18,7 @@ These instructions are mostly followable from Step
     * Wheel Circumference
     * Angle Motor Invert
     * Drive Motor Invert
-    * CANCoder Sensor Invert
+    * CANCoder Sensor Invert (this may do something or it might not, im not sure)
     * Angle Motor Gear Ratio
     * Drive Motor Gear Ratio
     * Angle Falcon Motor PID Values
@@ -28,7 +28,7 @@ These instructions are mostly followable from Step
 5. ```wheelCircumference```: Cirumference of the wheel (including tread) in meters. <br><b>If you are using a supported module, this value will be automatically set.</b>
 6. ```driveGearRatio```: Total gear ratio for the drive motor. <br><b>If you are using a supported module, this value will be automatically set.</b>
 7. ```angleGearRatio```: Total gear ratio for the angle motor. <br><b>If you are using a supported module, this value will be automatically set.</b>
-8. ```canCoderInvert``` and ```angleMotorInvert```: Both must be set such that they are CCW+. <br><b>If you are using a supported module, this value will be automatically set.</b>
+8. ```canCoderInvert``` and ```angleMotorInvert```: Both must be set such that they are CCW+. <br><b>If you are using a supported module, this value will be automatically set. (I think, probably. Maybe. Hopefully. Probably test this before comp)</b>
 9. ```driveMotorInvert```: <b>If you are using a supported module, this value will be automatically set.</b>
 <br>This can always remain false, since you set your offsets in step 11 such that a positive input to the drive motor will cause the robot to drive forwards.
 <br>However this can be set to true if for some reason you prefer the bevel gears on the wheel to face one direction or another when setting offsets. See Step 11 for more information.
